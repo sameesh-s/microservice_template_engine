@@ -33,5 +33,21 @@ services:
       - user-service
       - mongodb
 
+  grafana:
+    image: grafana/grafana-oss:8.5.2
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    links:
+      - prometheus:prometheus
+    #volumes:
+    #  - ./grafana:/var/lib/grafana
+    user: '472'
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=password
+
+
 volumes:
   mongodb_data_container:
