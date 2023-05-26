@@ -8,6 +8,10 @@ group = 'com.climpoche'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+springBoot {
+	buildInfo()
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor

@@ -38,3 +38,21 @@ docker pull prom/prometheus
 
 docker run -d --name=prometheus -p 9090:9090 -v /home/xcavenger/github/springboot_prometheus_grafana/user/user/src/main/resources/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml 
 ```
+
+
+to get info in actuator 
+-----------------------
+add this in build.grale 
+```agsl
+springBoot {
+	buildInfo()
+}
+```
+add this in application properties 
+```agsl
+
+## Configuring info endpoint
+#management.endpoint.info.enabled=true
+#management.endpoints.web.exposure.include=info,health
+management.info.env.enabled=true
+```
