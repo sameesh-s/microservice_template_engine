@@ -56,3 +56,15 @@ add this in application properties
 #management.endpoints.web.exposure.include=info,health
 management.info.env.enabled=true
 ```
+
+To create project using springCLI use the below command 
+-------------------------------------------------------   
+```agsl
+spring init --boot-version=3.1.0 --build=gradle --java-version=11 --packaging=jar --name=usertemp --package-name=com.clim.user --groupId=com.clim.user --dependencies=actuator,webflux --version=1.0.0-SNAPSHOT --type=gradle-project user-service
+```
+
+To list all the dependencies using springCLI 
+---------------------------------------------   
+```agsl
+spring init --list 
+```
